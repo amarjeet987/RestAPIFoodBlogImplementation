@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FoodBlogApp</string>
+    <string name="blog_heading">%1$s %2$s</string>
+    <string name="curated_for">CURATED FOR MAYANK</string>
+    <string name="see_more">SEE MORE</string>
+    <string name="about">ABOUT</string>
+    <string name="where">WHERE TO EAT</string>
+    <string name="dishes">BEST %1$s DISHES</string>
+    <string name="photos">PHOTOS</string>
+</resources>

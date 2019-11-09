@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:id="@+id/slide_up_layout"
+    android:background="@color/white"
+    app:umanoPanelHeight="0dp"
+    app:umanoScrollableView="@+id/slideUpView"
+    tools:context=".views.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="320dp"
+            android:layout_height="250dp"
+            android:visibility="visible"
+            android:layout_marginTop="93dp"
+            app:cardCornerRadius="7dp"
+            android:id="@+id/foodBlog"
+            android:background="@color/white"
+            android:layout_centerHorizontal="true" >
+
+            <io.supercharge.shimmerlayout.ShimmerLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/loading">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/curated_for_loading"
+                        android:layout_width="123dp"
+                        android:layout_height="8dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@color/shimmerColor"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/colorAccent" />
+
+                    <RelativeLayout
+                        android:id="@+id/blog_title_loading1"
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_below="@+id/curated_for_loading"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@color/shimmerColor"
+                        android:textColor="@color/colorHead"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/blog_title_loading2"
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@color/shimmerColor"
+                        android:layout_below="@+id/blog_title_loading1"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="30dp"
+                        android:textColor="@color/colorHead"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginStart="13dp"
+                        android:background="@color/shimmerColor"
+                        android:layout_marginEnd="13dp"
+                        android:layout_below="@+id/blog_title_loading2"
+                        android:layout_above="@id/see_more_layout_loading"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:id="@+id/see_more_layout_loading"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="54dp"
+                            android:layout_height="8dp"
+                            android:layout_centerInParent="true"
+                            android:background="@color/shimmerColor"
+                            android:textColor="@color/lightGrayText"
+                            android:fontFamily="@font/montserrat"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </io.supercharge.shimmerlayout.ShimmerLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/loading_complete">
+
+                <TextView
+                    android:id="@+id/curated_for"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="10dp"
+                    android:text="@string/curated_for"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/blog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/curated_for"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginEnd="30dp"
+                    android:textColor="@color/colorHead"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_below="@+id/blog_title"
+                    android:layout_above="@id/see_more_layout"
+                    android:id="@+id/recyclerViewFoodBlog"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:id="@+id/see_more_layout"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:text="@string/see_more"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/lightGrayText"
+                        android:fontFamily="@font/montserrat"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/click_slide"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/slideUpView">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/collapse"
+                        android:src="@drawable/ic_expand"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:id="@+id/recViewFoodDisp"
+                    android:layout_marginTop="59dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/curated_for"
+                        android:textSize="10sp"
+                        android:id="@+id/curated_text"
+                        android:textColor="@color/colorAccent"
+                        android:fontFamily="@font/montserrat"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:layout_below="@id/curated_text"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/colorHead"
+                        android:id="@+id/head_text"/>
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:layout_width="match_parent"
+                        android:layout_height="157dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/viewPager_img"
+                        android:layout_below="@id/head_text"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/viewPager_img"
+                        android:id="@+id/viewpager_indicators">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/img1"
+                                android:background="@drawable/tab_selected"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/img2"
+                                android:background="@drawable/tab_not_selected"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/img3"
+                                android:background="@drawable/tab_not_selected"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/img4"
+                                android:background="@drawable/tab_not_selected"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/recViewFoodDisp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="25dp"
+                        android:id="@+id/slide_up_layout_recyclerView"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
