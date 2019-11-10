@@ -1,2 +1,2 @@
 # RestAPIFoodBlogImplementation
-REST API implementation for s food blog app using Retrofit and RxJava.
+REST API implementation for a food blog app using Retrofit and RxJava.
